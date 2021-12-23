@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddActivity">
+
+    <LinearLayout
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="89dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/roboto_black"
+            android:text="Sewa Alat Pancing"
+            android:textAlignment="center"
+            android:textColor="?attr/actionMenuTextColor"
+            android:textSize="100px"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/banner">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="25dp">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lbl_namaLengkap"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama"
+                app:startIconDrawable="@drawable/baseline_face_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_namalengkap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/rubik_medium"
+                    android:textSize="20sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lbl_tgl_sewa"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lbl_namaLengkap"
+                android:hint="Tanggal Sewa"
+                android:layout_marginTop="10dp"
+                app:startIconDrawable="@drawable/baseline_calendar_today_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_tgl_sewa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/rubik_medium"
+                    android:textSize="20sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/grp_seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lbl_tgl_sewa"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp">
+
+                <TextView
+                    android:id="@+id/lbl_umur"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/rubik_medium"
+                    android:text="Umur "
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <SeekBar
+                    android:id="@+id/seekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lbl_umur"
+                    android:layout_marginHorizontal="65dp"
+                    android:layout_marginBottom="15dp"
+                    android:max="100"
+                    android:progress="0"
+                    android:scaleX="2"
+                    android:scaleY="2" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/lbl_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/grp_seekbar"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/rubik_medium"
+                android:labelFor="@+id/radioGroupGender"
+                android:text="Gender"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lbl_gender"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/laki_laki"
+                    android:layout_width="275dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp"
+                    android:fontFamily="@font/rubik"
+                    android:text="Laki-Laki"
+                    android:textSize="20sp"
+                    style="@style/Widget.MaterialComponents.CompoundButton.RadioButton" />
+
+                <RadioButton
+                    android:id="@+id/perempuan"
+                    android:layout_width="273dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp"
+                    android:fontFamily="@font/rubik"
+                    android:text="Perempuan"
+                    android:textSize="20sp"
+                    style="@style/Widget.MaterialComponents.CompoundButton.RadioButton"/>
+            </RadioGroup>
+
+            <RelativeLayout
+                android:id="@+id/checkbox_sosmed"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/radioGroupGender"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="20dp">
+
+                <!--                Label sumber-->
+                <TextView
+                    android:id="@+id/lbl_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/rubik_medium"
+                    android:text="Service"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/pancing_fullset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lbl_service"
+                    android:checked="false"
+                    android:fontFamily="@font/rubik"
+                    android:text="Pancing Fullset"
+                    android:textSize="20sp" />
+
+
+                <CheckBox
+                    android:id="@+id/tas_pancing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pancing_fullset"
+                    android:checked="false"
+                    android:fontFamily="@font/rubik"
+                    android:text="Tas Pancing"
+                    android:textSize="20sp" />
+
+
+                <CheckBox
+                    android:id="@+id/set_kail_pancing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tas_pancing"
+                    android:checked="false"
+                    android:fontFamily="@font/rubik"
+                    android:text="1 Set Kail Pancing"
+                    android:textSize="20sp" />
+
+
+                <CheckBox
+                    android:id="@+id/joran_pancing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/set_kail_pancing"
+                    android:checked="false"
+                    android:fontFamily="@font/rubik"
+                    android:text="Joran Pancing"
+                    android:textSize="20sp" />
+
+
+                <CheckBox
+                    android:id="@+id/reel_pancing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/joran_pancing"
+                    android:checked="false"
+                    android:fontFamily="@font/rubik"
+                    android:text="Reel Pancing"
+                    android:textSize="20sp" />
+
+
+                <CheckBox
+                    android:id="@+id/lainnya"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/reel_pancing"
+                    android:checked="false"
+                    android:fontFamily="@font/rubik"
+                    android:text="Lainnya"
+                    android:textSize="20sp" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/daftar"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/checkbox_sosmed"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:text="Daftar"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="25sp"
+                app:icon="@drawable/baseline_add_24" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
